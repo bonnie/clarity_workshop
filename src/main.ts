@@ -9,4 +9,5 @@ if (environment.production) {
   enableProdMode();
 }
 
+// this is how the application "comes to life"
 platformBrowserDynamic().bootstrapModule(AppModule);

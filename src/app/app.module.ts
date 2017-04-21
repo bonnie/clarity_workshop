@@ -11,20 +11,22 @@ import { AboutComponent } from "./about/about.component";
 
 @NgModule({
     declarations: [
+        // components written by you
         AppComponent,
         AboutComponent,
         HomeComponent
     ],
     imports: [
+        // components written by others (1st 4 = angular; ClarityModule = clarity)
         BrowserAnimationsModule,
         BrowserModule,
         FormsModule,
         HttpModule,
         ClarityModule.forRoot(),
-        ROUTING
+        ROUTING // a module written by us
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: [], // array of services and dependencies for this module
+    bootstrap: [AppComponent] 
 })
 export class AppModule {
 }

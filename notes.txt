@@ -1,0 +1,7 @@
+➜  clarity-seed git:(master) ✗ ng g service photo
+installing service
+  create src/app/photo.service.spec.ts
+  create src/app/photo.service.ts
+  WARNING Service is generated but not provided, it must be provided to be used
+
+  

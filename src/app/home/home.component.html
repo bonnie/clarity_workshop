@@ -1,22 +1,18 @@
-<!--
-  ~ Copyright (c) 2016 VMware, Inc. All Rights Reserved.
-  ~ This software is released under MIT license.
-  ~ The full license information can be found in LICENSE in the root directory of this project.
-  -->
-<p>This is a Clarity seed application. This is the default page that loads for the application.</p>
+<!-- from https://vmware.github.io/clarity/documentation/cards -->
 
-<clr-dropdown [clrMenuPosition]="'bottom-right'">
-    <button class="btn btn-outline-primary" clrDropdownToggle>
-        Dropdown
-        <clr-icon shape="caret down"></clr-icon>
-    </button>
-    <div class="dropdown-menu">
-        <label class="dropdown-header">Dropdown header</label>
-        <a href="javascript://" clrDropdownItem>Action 1</a>
-        <a href="javascript://" clrDropdownItem>Action 2</a>
-        <a href="javascript://" class="disabled" clrDropdownItem>Disabled</a>
-        <div class="dropdown-divider"></div>
-        <a href="javascript://" clrDropdownItem>Link 1</a>
-        <a href="javascript://" clrDropdownItem>Link 2</a>
+<div class="row">
+    <!-- structural directives always start with asterisk: *ngFor -->
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" *ngFor="let url of urls">
+        <a href="..." class="card clickable">
+            <div class="card-img">
+                <img src="{{url}}">
+            </div>
+            <div class="card-block">
+                <p class="card-text">
+                    ...
+                </p>
+            </div>
+        </a>
     </div>
-</clr-dropdown>
+    
+</div>
