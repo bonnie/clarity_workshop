@@ -15,9 +15,17 @@ export class HomeComponent {
     public urls: string[];
 
     constructor(public photoService: PhotoService) {
+        this.urls = [];
         photoService.getPhoto().subscribe(
             data => {
-                console.log(data);
+                data.photos.photo.forEach (photo => {
+                    let url = "";
+                    // let = es6 syntax for scoped variable
+                    url += `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+                    // backticks are string interpolation
+                    this.urls.push(url);
+                })
+                // console.log(data);
             }
         );
 

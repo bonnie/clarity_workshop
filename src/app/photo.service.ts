@@ -11,8 +11,8 @@ export class PhotoService {
   getPhoto(): Observable<any> {
 
     return this.http.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=41d62fc7df8b603de615893d3d7ad83b&tags=kitten&per_page=10&format=json&nojsoncallback=1")
-    .map(data => data.json());  
-
+    .map(data => data.json()); 
+    
     // => is es6 syntax, left is the input, right is the function
     // similar to 
     // function(data) {
