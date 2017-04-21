@@ -14,9 +14,12 @@ import { PhotoService } from "../photo.service";
 export class HomeComponent {
     public urls: string[];
 
-    constructor(public photoService: PhotoService) {
-        this.urls = [];
-        photoService.getPhoto().subscribe(
+    constructor(public photoService: PhotoService) {}
+
+
+onClick(value: string) {
+       this.urls = [];
+        this.photoService.getPhoto(value).subscribe(
             data => {
                 data.photos.photo.forEach (photo => {
                     let url = "";
@@ -30,6 +33,6 @@ export class HomeComponent {
         );
 
         // you subscribe to an observable
-    }
+}
 
 }
