@@ -5,15 +5,15 @@
 <!-- from https://vmware.github.io/clarity/documentation/cards -->
 <div class="row">
     <!-- structural directives always start with asterisk: *ngFor -->
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" *ngFor="let url of urls">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" *ngFor="let photo of photos">
         <a href="..." class="card clickable">
             <div class="card-img">
-                <img src="{{url}}">
-                <!-- alternatively, [src]="url" -->
+                <img src="{{photo.url}}">
+                <!-- alternatively, [src]="photo.url" -->
             </div>
             <div class="card-block">
                 <p class="card-text">
-                    ...
+                    {{photo.caption}}
                 </p>
             </div>
         </a>

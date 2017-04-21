@@ -12,27 +12,28 @@ import { PhotoService } from "../photo.service";
     providers: [ PhotoService ]
 })
 export class HomeComponent {
-    public urls: string[];
+    public photos: object[];
 
     constructor(public photoService: PhotoService) {}
 
 
 onClick(value: string) {
-       this.urls = [];
+       this.photos = [];
         this.photoService.getPhoto(value).subscribe(
             data => {
                 data.photos.photo.forEach (photo => {
-                    let url = "";
+                    let photoData = {url: null, caption: null};
                     // let = es6 syntax for scoped variable
-                    url += `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+                    photoData.url = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
                     // backticks are string interpolation
-                    this.urls.push(url);
+
+                    photoData.caption = photo.title;
+                    this.photos.push(photoData);
                 })
                 // console.log(data);
             }
         );
 
         // you subscribe to an observable
-}
-
+    }
 }
